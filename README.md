@@ -23,7 +23,7 @@ När en användare loggar ut förstörs inte sessionen vilket innebär att det g
 ##Prestandaproblem
 
 #### JavaScript i header
-All javascript kod laddas in i headern vilket gör att om det är stora filer som behöver läsas in kommer sidan att vara helt vit medans scriptet läses in. Om javascriptet istället hade legat i slutet av <body> taggen eller ännu bättre i en footer, hade sidan börjat rendera sidan och visa informationen. I referensen visas ett bra exempel på skillnaden mellan att placera javascript i <header> eller <footer>. [5]
+All javascript kod laddas in i headern vilket gör att om det är stora filer som behöver läsas in kommer sidan att vara helt vit medans scriptet läses in. Om javascriptet istället hade legat i slutet av <body> taggen eller ännu bättre i en footer, hade sidan börjat rendera sidan och visa informationen. I referensen visas ett bra exempel på skillnaden mellan att placera javascript i header eller footer taggen. [5]
 
 ####
 
