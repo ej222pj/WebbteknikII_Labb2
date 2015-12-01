@@ -22,7 +22,10 @@ När en användare loggar ut förstörs inte sessionen vilket innebär att det g
 
 ##Prestandaproblem
 
+#### JavaScript i header
+All javascript kod laddas in i headern vilket gör att om det är stora filer som behöver läsas in kommer sidan att vara helt vit medans scriptet läses in. Om javascriptet istället hade legat i slutet av <body> taggen eller ännu bättre i en footer, hade sidan börjat rendera sidan och visa informationen. I referensen visas ett bra exempel på skillnaden mellan att placera javascript i <header> eller <footer>. [5]
 
+####
 
 ## Referenser 
 [1] "OWASP Password Storage Cheat Sheet" [Online] Tillgänglig: https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet
@@ -36,3 +39,7 @@ När en användare loggar ut förstörs inte sessionen vilket innebär att det g
 
 [4] "OWASP Top Ten Project A2" [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A2-Broken_Authentication_and_Session_Management
 [Hämtad: 30 November 2015]
+
+[5] "Javascript in header vs footer" [Online] Tillgänglig: 
+http://infoheap.com/javascript-in-header-vs-footer/
+[Hämtad: 1 December 2015]
