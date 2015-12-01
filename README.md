@@ -20,12 +20,12 @@ Det finns inget som hindrar en användare att göra en XSS attack genom att till
 #### Dålig sessions hantering
 När en användare loggar ut förstörs inte sessionen vilket innebär att det går att använda backåtknappen eller skriva in en url som används när man är inloggad för att bli inloggad på samma profil igen. Detta medför att användare 1 kan logga ut och sedan kan användare 2 börja använda datorn och logga in igen på användare 1s profil. [4]
 
-##Prestandaproblem
+## Prestandaproblem
 
 #### JavaScript i header
 All javascript kod laddas in i headern vilket gör att om det är stora filer som behöver läsas in kommer sidan att vara helt vit medans scriptet läses in. Om javascriptet istället hade legat i slutet av <body> taggen eller ännu bättre i en footer, hade sidan börjat rendera sidan och visa informationen. I referensen visas ett bra exempel på skillnaden mellan att placera javascript i header eller footer taggen. [5]
 
-####
+#### Inline kod
 
 ## Referenser 
 [1] "OWASP Password Storage Cheat Sheet" [Online] Tillgänglig: https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet
