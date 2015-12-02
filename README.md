@@ -28,10 +28,10 @@ All javascript kod laddas in i headern vilket gör att om det är stora filer so
 #### Inline kod
 I applikationen finns det mycket inline kod, i alla vy filer är CSSen och lite JavaScript skriven direkt i body taggen och viss javascript också. Gör man på detta sättet blir responstiden lite kortare för att webbläsaren behöver inte hämta inlänkade filer. Men problemet med inline kod är att CSS och JavaScript sparas inte i cachen och man kan få skriva dubbel kod som i index.html och admin.html. Hade all CSS och JavaScript istället länkats in externt hade den koden automatiskt sparats i cachen och inte behövts läsas in vid varje request. [8]
 
-## Egna övergripande reflektioner 
-
 #### Logout knappen
-Logout knappen visas hela tiden, även när en användare inte är inloggad. Det är onödigt att den visas när man inte är inloggad för det kan uppstå förvirring hos användarna.
+Logout knappen visas hela tiden, även när en användare inte är inloggad. Det är onödigt att den visas när man inte är inloggad för det kan uppstå förvirring hos användarna. Det blir också dubbel JavaScript kod som är onödig att läsa in. Det hade räckt med att bara visa logout knappen när en användare är inloggad. [9]
+
+## Egna övergripande reflektioner 
 
 #### Meddelanden visas inte direkt
 Efter att en användare har loggat in visas inte de existerande meddelandena förens använderen har skrivit ett nytt meddelande. Alla meddelanden borde visas direkt när en användare loggar in.
@@ -66,3 +66,6 @@ By Steve Souders 2009. s. 45-50.
 
 [8] High Performance Web Sites, Essential Knowledge for Front-End Engineers
 By Steve Souders 2009. s. 55-61.
+
+[9] High Performance Web Sites, Essential Knowledge for Front-End Engineers
+By Steve Souders 2009. s. 85-88.
