@@ -62,10 +62,10 @@ Det saknas radbrytning i meddelandena. Om en användare skriver ett långt ord k
 [Hämtad: 30 November 2015]
 
 [7] High Performance Web Sites, Essential Knowledge for Front-End Engineers
-By Steve Souders 2009. s. 45-50.
+By Steve Souders 2007. s. 45-50.
 
 [8] High Performance Web Sites, Essential Knowledge for Front-End Engineers
-By Steve Souders 2009. s. 55-61.
+By Steve Souders 2007. s. 55-61.
 
 [9] High Performance Web Sites, Essential Knowledge for Front-End Engineers
-By Steve Souders 2009. s. 85-88.
+By Steve Souders 2007. s. 85-88.
