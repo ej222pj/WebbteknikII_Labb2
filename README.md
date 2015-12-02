@@ -26,6 +26,21 @@ När en användare loggar ut förstörs inte sessionen vilket innebär att det g
 All javascript kod laddas in i headern vilket gör att om det är stora filer som behöver läsas in kommer sidan att vara helt vit medans scriptet läses in. Om javascriptet istället hade legat i slutet av <body> taggen eller ännu bättre i en footer, hade sidan börjat rendera sidan och visa informationen. I referensen visas ett bra exempel på skillnaden mellan att placera javascript i header eller footer taggen. [5]
 
 #### Inline kod
+I applikationen finns det mycket inline kod, i alla vy filer är CSSen och lite JavaScript skriven direkt i body taggen och viss javascript också. Gör man på detta sättet blir responstiden lite kortare för att webbläsaren behöver inte hämta inlänkade filer. Men problemet med inline kod är att CSS och JavaScript sparas inte i cachen och man får skriva dubbel kod som i index.html och admin.html. Hade all CSS och JavaScript istället länkats in externt hade den koden automatiskt sparats i cachen och inte behövts läsas in vid varje request. [6]
+
+## Egna övergripande reflektioner 
+
+#### Logout knappen
+Logout knappen visas hela tiden, även när en användare inte är inloggad. Det är onödigt att den visas när man inte är inloggad för det kan uppstå förvirring hos användarna.
+
+#### Meddelanden visas inte direkt
+Efter att en användare har loggat in visas inte de existerande meddelandena förens använderen har skrivit ett nytt meddelande. Alla meddelanden borde visas direkt när en användare loggar in.
+
+#### Valideringsmeddelande
+Det saknas helt valideringsmeddelanden vid inloggning vilket gör att inloggningen inte är användarvänlig. Applikationen borde visa om eposten inte matchar ett konto eller om lösenordet är felaktigt.
+
+#### Radbrytning i meddelanden
+Det saknas radbrytning i meddelandena. Om en användare skriver ett långt ord kommer inte ordet att byta rad utan visas utanför meddelanderutan. 
 
 ## Referenser 
 [1] "OWASP Password Storage Cheat Sheet" [Online] Tillgänglig: https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet
@@ -40,6 +55,8 @@ All javascript kod laddas in i headern vilket gör att om det är stora filer so
 [4] "OWASP Top Ten Project A2" [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A2-Broken_Authentication_and_Session_Management
 [Hämtad: 30 November 2015]
 
-[5] "Javascript in header vs footer" [Online] Tillgänglig: 
-http://infoheap.com/javascript-in-header-vs-footer/
-[Hämtad: 1 December 2015]
+[5] High Performance Web Sites, Essential Knowledge for Front-End Engineers
+By Steve Souders 2009. s. 45-50.
+
+[6] High Performance Web Sites, Essential Knowledge for Front-End Engineers
+By Steve Souders 2009. s. 55-61.
