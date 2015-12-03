@@ -5,7 +5,7 @@ Eric Jennerstrand
 ## Säkerhetsproblem
 
 #### Inte Hashade Lösenord
-Lösenord ska alltid vara hashade i en databas, men i denna applikationen sparas lösenorden i klartext. Detta betyder att om databasen blirr hackad får hackaren tillgång till alla lösenord och emailadresser. Om en användare då har samma lösenord på flera webbsidor har hackaren tillgång till de webbsidorna också. Om alla lösenord istället hade blivit hashade med ett unik salt. Om en hackare då hade fått tag i lösenorden hade det inte gjort något för att det är nästan omöjligt att få fram ett lösenord som har blivit hashat.  [1]
+Lösenord ska alltid vara hashade i en databas, men i denna applikationen sparas lösenorden i klartext. Detta betyder att om databasen blir hackad får hackaren tillgång till alla lösenord och emailadresser. Om en användare då har samma lösenord på flera webbsidor har hackaren tillgång till de webbsidorna också. Om alla lösenord istället hade blivit hashade med ett unik salt. Om en hackare då hade fått tag i lösenorden hade det inte gjort något för att det är nästan omöjligt att få fram ett lösenord som har blivit hashat.  [1]
 
 #### SQL-injections
 Det är möjligt vid inloggningen att göra ett så kallat "SQL-injection", det innebär att man inte behöver skriva rätt mail eller lösenord. Det går att skicka en sql fråga som tex 
