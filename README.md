@@ -48,6 +48,9 @@ Det saknas helt valideringsmeddelanden vid inloggning vilket gör att inloggning
 #### Radbrytning i meddelanden
 Det saknas radbrytning i meddelandena. Om en användare skriver ett långt ord kommer inte ordet att byta rad utan visas utanför meddelanderutan. 
 
+#### Egna reflektioner om labben
+Jag tycker att denna labben har varit väldigt intressant och den har gett mig en tankeställare om mina egna applikationer som jag behöver titta över nu. Även att denna applikationen var väldigt överdriven med sina fel kan jag tänka mig att det är många gånger som programmerare missar några av dessa felen. Jag gillade OWASPs top 10 lista, det är ett riktigt bra sätt gå igenom iallafall de 10 vanligaste felen en applikation kan ha och jag kommer ha med mig den en lång tid framöver.
+
 ## Referenser 
 [1] "OWASP Password Storage Cheat Sheet" [Online] Tillgänglig: https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet
 [Hämtad: 30 november 2015]
@@ -58,13 +61,11 @@ Det saknas radbrytning i meddelandena. Om en användare skriver ett långt ord k
 [3] "OWASP SQL Injection Prevention Cheat Sheet" [Online] Tillgänglig: https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet
 [Hämtad: 30 November 2015]
 
-
 [4] "OWASP Top Ten Project A7" [Online] Tillgänglig:https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control
 [Hämtad: 30 November 2015]
 
 [5] "OWASP Top Ten Project A3" [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)
 [Hämtad: 30 November 2015]
-
 
 [6] "OWASP XSS Prevention Cheat Sheet" [Online] Tillgänglig: https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
 [Hämtad: 30 November 2015]
