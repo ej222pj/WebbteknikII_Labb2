@@ -25,16 +25,22 @@ När en användare loggar ut förstörs inte sessionen vilket innebär att det g
 ## Prestandaproblem
 
 #### Onödiga HTTP-anrop
-En webbapplikation borde göra så få HTTP-anrop som möjligt och i denna applikation finns det länkar till resurser som inte finns tillgängliga på servern. Därför kommer inte applikationen att hitta dessa resurser och kommer därför få en 404. I detta fallet hittar jag 3 resurser som ger en 404. "materialize.min.css", "materialize.js" och "ie-10-viewport-bug-workaround.js" går inte att hämta och borde därför inte länkas in. Anledning till att dessa borde plockas bort är för att de blir en snabbare responstid på sidan. [8]
+En webbapplikation borde göra så få HTTP-anrop som möjligt och i denna applikation finns det länkar till resurser som inte finns tillgängliga på servern. Därför kommer inte applikationen att hitta dessa resurser och kommer därför få en 404. I detta fallet hittar jag 3 resurser som ger en 404. "materialize.min.css", "materialize.js" och "ie-10-viewport-bug-workaround.js" går inte att hämta och borde därför inte länkas in. Anledning till att dessa borde plockas bort är för att de blir en snabbare responstid på sidan. [8, s. 10-17.]
 
 #### JavaScript i header
-All javascript kod laddas in i headern vilket gör att om det är stora filer som behöver läsas in kommer sidan att vara helt vit medan scriptet läses in. Om javascriptet istället hade legat i slutet av body taggen eller ännu bättre i en footer, hade sidan börjat renderats och visat informationen. [9]
+All javascript kod laddas in i headern vilket gör att om det är stora filer som behöver läsas in kommer sidan att vara helt vit medan scriptet läses in. Om javascriptet istället hade legat i slutet av body taggen eller ännu bättre i en footer, hade sidan börjat renderats och visat informationen. [8, s. 45-50.]
 
 #### Inline kod
-I applikationen finns det mycket inline kod, i alla vy filer är CSSen skriven direkt i body taggen och viss javascript också. Gör man på detta sättet blir responstiden lite kortare för att webbläsaren behöver inte hämta inlänkade filer. Men problemet med inline kod är att CSS och JavaScript inte sparas i cachen och man kan få skriva dubbel kod som i index.html och admin.html. Hade all CSS och JavaScript istället länkats in externt hade den koden automatiskt sparats i cachen och inte behövts läsas in vid varje request. Kort sagt: Länka in CSS I header och JavaScript så långt ner i html dokumentet som möjligt för att dessa filer ska kunna cachas. [10]
+I applikationen finns det mycket inline kod, i alla vy filer är CSSen skriven direkt i body taggen och viss javascript också. Gör man på detta sättet blir responstiden lite kortare för att webbläsaren behöver inte hämta inlänkade filer. Men problemet med inline kod är att CSS och JavaScript inte sparas i cachen och man kan få skriva dubbel kod som i index.html och admin.html. Hade all CSS och JavaScript istället länkats in externt hade den koden automatiskt sparats i cachen och inte behövts läsas in vid varje request. Kort sagt: Länka in CSS I header och JavaScript så långt ner i html dokumentet som möjligt för att dessa filer ska kunna cachas. [8, s. 55-61.]
 
 #### Logout knappen
-Logout knappen visas hela tiden, även när en användare inte är inloggad. Det är onödigt att den visas när man inte är inloggad för det kan uppstå förvirring hos användarna. Det blir också dubbel JavaScript kod som är onödig att läsa in. Det hade räckt med att bara visa logout knappen när en användare är inloggad. [11]
+Logout knappen visas hela tiden, även när en användare inte är inloggad. Det är onödigt att den visas när man inte är inloggad för det kan uppstå förvirring hos användarna. Det blir också dubbel JavaScript kod som är onödig att läsa in. Det hade räckt med att bara visa logout knappen när en användare är inloggad. [8, s. 85-88.]
+
+#### Cache-headers
+Det finns inte "expire header" på någon data ifrån servern, detta gör att när en användare laddar om sidan måste all data och alla scripts hämtas på nytt ifrån servern. För att lösa detta ska man lägga till expire headers på den datan eller filer som inte förändras ofta. Men det blir ett problem med detta på grund av att om man måste ändra en av filerna som har sparats kommer inte användaren få den nya informationen förens det laddas ner en ny version av den filen, om den inte laddas upp under ett annat namn. Att använda sig av expire header och spara filer i cachen get användaren en mycket bättre svarstid ifrån websidan. [8, s. 22-28.]
+
+#### Minifiering
+När en människa skriver JavaScript och CSS behövs det många whitespaces och kommentarer. Men en dator kan läsa koden utan några whitespaces och kommentarer, därför bör man plocka bort detta när ett projekt publiceras för att minska laddningstider av JavaScript och CSS. Det går även att använda en metod som heter obfuscation som gör om variabelnamn till kortare namn. Detta gör också att koden blir mindre men det kan skapa buggar i vissa fall. Det finns program som hälper till med Minifiering. [8, s. 69-75.]
 
 ## Egna övergripande reflektioner 
 
@@ -73,15 +79,4 @@ Jag tycker att denna labben har varit väldigt intressant och den har gett mig e
 [Hämtad: 30 November 2015]
 
 [8] High Performance Web Sites, Essential Knowledge for Front-End Engineers
-By Steve Souders 2007. s. 10.
-
-[9] High Performance Web Sites, Essential Knowledge for Front-End Engineers
-By Steve Souders 2007. s. 45-50.
-
-[10] High Performance Web Sites, Essential Knowledge for Front-End Engineers
-By Steve Souders 2007. s. 55-61.
-
-[11] High Performance Web Sites, Essential Knowledge for Front-End Engineers
-By Steve Souders 2007. s. 85-88.
-
-
+By Steve Souders 2007.
